@@ -1,7 +1,10 @@
-## append to end of .bashrc
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-### this is to start x
+### start x on tty1
 if [[ $( /usr/bin/tty ) == "/dev/tty1" ]]; then
 	pgrep Xorg || /usr/bin/startx
 fi
-
