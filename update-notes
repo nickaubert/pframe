@@ -1,6 +1,13 @@
-# http://k3a.me/how-to-make-raspberrypi-truly-read-only-reliable-and-trouble-free/
+# Update these:
+/etc/fstab
+/etc/systemd/system/getty@tty1.service.d/autologin.conf
+/etc/systemd/system/getty@tty1.service.d/noclear.conf
+/home/pi/.bashrc
+/home/pi/.xinitrc
+/home/pi/bin/runphotos
 
-insserv -r bootlogs
-# assuming no audio
-insserv -r alsa-utils
-
+## Optional updates
+## http://k3a.me/how-to-make-raspberrypi-truly-read-only-reliable-and-trouble-free/
+## assuming no audio
+# insserv -r alsa-utils
+# insserv -r bootlogs
