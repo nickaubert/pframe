@@ -1,0 +1,6 @@
+# http://k3a.me/how-to-make-raspberrypi-truly-read-only-reliable-and-trouble-free/
+
+insserv -r bootlogs
+# assuming no audio
+insserv -r alsa-utils
+

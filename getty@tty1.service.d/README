@@ -1,0 +1,1 @@
+# auto login user pi goes in /etc/systemd/system/getty@tty1.service.d/

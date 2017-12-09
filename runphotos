@@ -1,0 +1,27 @@
+#!/bin/bash
+
+pdir=/mnt/photos/dated
+
+if [[ ! -d $pdir ]]; then
+	echo "ERROR: no dir mounted at $pdir"
+	exit 1
+fi
+
+while ( true ); do
+
+    dcount=$( ls -U $pdir | wc -l )
+    skipem=$(( $RANDOM % $dcount ))
+
+    cdir=0
+	for ddir in $( ls -U $pdir | sort ) ; do
+        if [[ $cdir -lt $skipem ]]; then
+            cdir=$(( $cdir + 1 ))
+            continue
+        fi
+        feh --no-fehbg --auto-zoom --fullscreen --cycle-once --slideshow-delay 3.0 $pdir/$ddir
+	done
+	umount /mnt/photos && mount /mnt/photos || break
+
+done
+
+sudo reboot
