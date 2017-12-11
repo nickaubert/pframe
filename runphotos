@@ -13,12 +13,12 @@ while ( true ); do
     skipem=$(( $RANDOM % $dcount ))
 
     cdir=0
-	for ddir in $( ls -U $pdir | sort ) ; do
+	for ddir in $( find $pdir -type d | sort ) ; do
         if [[ $cdir -lt $skipem ]]; then
             cdir=$(( $cdir + 1 ))
             continue
         fi
-        feh --no-fehbg --auto-zoom --fullscreen --cycle-once --slideshow-delay 3.0 $pdir/$ddir
+        feh --no-fehbg --auto-zoom --fullscreen --cycle-once --slideshow-delay 3.0 $ddir
 	done
 	umount /mnt/photos && mount /mnt/photos || break
 
