@@ -3,6 +3,7 @@
 /etc/fstab
 /etc/systemd/system/getty@tty1.service.d/autologin.conf
 /etc/systemd/system/getty@tty1.service.d/noclear.conf
+/etc/systemd/system/autologin@.service
 /etc/wpa_supplicant/wpa_supplicant.conf
 /home/pi/.bashrc
 /home/pi/.xinitrc
